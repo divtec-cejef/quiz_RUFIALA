@@ -7,4 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="darkGrey">#121212</color>
+    <color name="darkPrimary">#1F1B24</color>
+    <color name="darkTextPrimary">#BB86FC</color>
+    <color name="darkTextVariant">#3700B3</color>
+    <color name="darkTextSecondary">#03DAC6</color>
+    <color name="darkTextStandar">#FFFFFFFF</color>
+    <color name="darkButton">#FF0266</color>
+    <color name="darlButtonLight">#FF7597</color>
+    <color name="darkError">#CF6679</color>
+
+
+
 </resources>
