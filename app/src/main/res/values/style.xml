@@ -7,30 +7,56 @@
         <item name="borderlessButtonStyle">@style/Widget.App.Button.TextButton</item>
         <item name="materialButtonOutlinedStyle">@style/Widget.App.Button.OutlinedButton</item>
         <item name="materialButtonStyle">@style/Widget.App.Button</item>
+        <!-- Customisation du thème-->
+        <item name="colorPrimary">@color/darkPrimary</item>
+        <item name="colorPrimaryDark">@color/darkGrey</item>
+        <item name="colorButtonNormal">@color/teal_700</item>
+        <item name="colorAccent">@color/teal_200</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlNormal">@color/teal_200</item>
+        <item name="android:windowBackground">@color/darkPrimary</item>
     </style>
 
+
+
+    <!--Style pour les inputs text-->
+    <style name="TextAppearance.Quiz.TextInputLayout.HintText" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textColor">@color/darkTextStandar</item>
+    </style>
+    <!--Style pour les inputs text-->
+    <style name="Widget.Quiz.TextInputLayer.player2" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/darkButton</item>
+        <item name="hintTextColor">@color/darkTextStandar</item>
+        <item name="hintTextAppearance">@style/TextAppearance.Quiz.TextInputLayout.HintText</item>
+        <item name="suffixText">Player 2</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+    <!--Style pour les inputs text-->
+    <style name="Widget.Quiz.TextInputLayer.player1" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/darkButton</item>
+        <item name="hintTextColor">@color/darkTextStandar</item>
+        <item name="hintTextAppearance">@style/TextAppearance.Quiz.TextInputLayout.HintText</item>
+        <item name="suffixText">Player 1</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+    <!--Style pour les buttons-->
     <style name="Widget.App.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.TextButton</item>
-
-
     </style>
-
+    <!--Style pour les buttons-->
     <style name="Widget.App.Button.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.TextButton</item>
-
-
+    <!--Style pour les buttons-->
     </style>
-
     <style name="Widget.App.Button" parent="Widget.MaterialComponents.Button">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button</item>
-
-
     </style>
-
+    <!--Style pour les buttons-->
     <style name="ThemeOverlay.App.Button.TextButton" parent="">
         <item name="colorPrimary">@color/darkTextVariant</item>
     </style>
-
+    <!--Style pour les buttons-->
     <style name="ThemeOverlay.App.Button" parent="">
         <item name="colorPrimary">@color/darkButton</item>
         <item name="colorOnPrimary">@color/white</item>
