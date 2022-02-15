@@ -3,6 +3,7 @@ package com.example.quiz;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -61,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
         BT_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent game = new Intent(getApplicationContext(), GameActivity.class);
+                //game.putExtra();
+                startActivity(game);
             }
         });
     }
@@ -77,11 +80,12 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.action_favorite:
                 //Do action
+
                 break;
-            case R.id.action_delete:
+            case R.id.action_parametre:
                // resetField();
                 break;
-            case R.id.action_about:
+            case R.id.action_question:
                 //LAY_aPropos.setVisibility(RelativeLayout.VISIBLE);
                 break;
             default:

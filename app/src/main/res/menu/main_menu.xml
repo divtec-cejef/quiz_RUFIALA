@@ -7,11 +7,11 @@
         android:title="favoris"
         app:showAsAction="ifRoom"/>
     <item
-        android:id="@+id/action_delete"
+        android:id="@+id/action_parametre"
         android:title="Paramètre"
         app:showAsAction="never"/>
     <item
-        android:id="@+id/action_about"
+        android:id="@+id/action_question"
         android:title="Question"
         app:showAsAction="never"/>
 </menu>
