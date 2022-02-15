@@ -3,6 +3,8 @@ package com.example.quiz;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -10,9 +12,12 @@ import android.view.MenuItem;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,7 +26,14 @@ public class MainActivity extends AppCompatActivity {
     private Button BT_play;
     private TextInputLayout ET_saisie_player1_layout;
     private TextInputLayout ET_saisie_player2_layout;
+    private TextInputLayout ET_saisie_question_layout;
+    private TextInputEditText Et_saisie_question;
+    private RelativeLayout LAY_question;
+    private RelativeLayout LAY_parametre;
 
+    private Button BT_cancel_question;
+    private Button BT_validate_question;
+    private Button BT_cancel_parametre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +45,19 @@ public class MainActivity extends AppCompatActivity {
         BT_player = findViewById(R.id.main_player_button);
         ET_saisie_player1_layout = findViewById(R.id.main_edit_text_player1_layout);
         ET_saisie_player2_layout = findViewById(R.id.main_edit_text_player2_layout);
+        ET_saisie_question_layout = findViewById(R.id.main_edit_text_question_layout);
+        Et_saisie_question = findViewById(R.id.main_edit_text_question);
         BT_play = findViewById(R.id.main_play_button);
+        LAY_question = findViewById(R.id.main_relativeLayout);
+        LAY_parametre = findViewById(R.id.main_relativeLayout_parametre);
+        BT_cancel_question = findViewById(R.id.main_cancel_question_button);
+        BT_cancel_parametre = findViewById(R.id.main_cancel_parametre_button);
 
+        ET_saisie_question_layout.setVisibility(EditText.GONE);
         ET_saisie_player1_layout.setVisibility(EditText.GONE);
         ET_saisie_player2_layout.setVisibility(EditText.GONE);
+        LAY_question.setVisibility(RelativeLayout.GONE);
+        LAY_parametre.setVisibility(RelativeLayout.GONE);
         BT_play.setVisibility(Button.GONE);
     }
 
@@ -67,6 +88,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(game);
             }
         });
+
+        BT_cancel_question.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Et_saisie_question.setText("");
+                LAY_question.setVisibility(RelativeLayout.GONE);
+                ET_saisie_question_layout.setVisibility(EditText.GONE);
+                final InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+
+            }
+        });
+        BT_cancel_parametre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LAY_parametre.setVisibility(RelativeLayout.GONE);
+            }
+        });
     }
 
     public boolean onCreateOptionsMenu(Menu menu){
@@ -75,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
@@ -84,9 +124,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.action_parametre:
                // resetField();
+                LAY_parametre.setVisibility(RelativeLayout.VISIBLE);
                 break;
             case R.id.action_question:
-                //LAY_aPropos.setVisibility(RelativeLayout.VISIBLE);
+                ET_saisie_question_layout.setVisibility(EditText.VISIBLE);
+                LAY_question.setVisibility(RelativeLayout.VISIBLE);
                 break;
             default:
                 return super.onOptionsItemSelected(item);

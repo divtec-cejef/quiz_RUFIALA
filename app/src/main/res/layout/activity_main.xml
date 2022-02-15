@@ -7,6 +7,7 @@
     tools:context=".MainActivity"
     style="@style/Theme.App">
 
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
@@ -23,6 +24,143 @@
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
 
     </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_relativeLayout"
+        android:backgroundTint="@color/darkGrey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="130dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/main_edit_text_question_layout"
+            style="@style/Widget.Quiz.TextInputLayer.player1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="20dp"
+            android:hint="Player 1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/main_edit_text_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:columnCount="2"
+                android:orientation="horizontal"
+                android:rowCount="1">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp">
+
+                    <Button
+                        android:id="@+id/main_validate_question_button"
+                        style="@style/Widget.App.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:elevation="5dp"
+                        android:text="Validate"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
+
+                    <Button
+                        android:id="@+id/main_cancel_question_button"
+                        style="@style/Widget.App.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:elevation="5dp"
+                        android:text="Cancel"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
+                </TableRow>
+            </TableLayout>
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_relativeLayout_parametre"
+        android:backgroundTint="@color/darkGrey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="130dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+        <!-- Discrete slider
+        <com.google.android.material.slider.Slider
+        android:valueFrom="1.0"
+        android:valueTo="10.0"
+        android:stepSize="10.0"
+        android:layout_height="20dp"
+        android:layout_width="200dp"    />
+-->
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:columnCount="2"
+                android:orientation="horizontal"
+                android:rowCount="1">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp">
+
+                    <Button
+                        android:id="@+id/main_validate_parametre_button"
+                        style="@style/Widget.App.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:elevation="5dp"
+                        android:text="Validate"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
+
+                    <Button
+                        android:id="@+id/main_cancel_parametre_button"
+                        style="@style/Widget.App.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="6dp"
+                        android:elevation="5dp"
+                        android:text="Cancel"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
+                </TableRow>
+            </TableLayout>
+
+
+
+    </RelativeLayout>
 
     <Button
         android:id="@+id/main_player_button"

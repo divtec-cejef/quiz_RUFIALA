@@ -18,7 +18,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:padding="10dp" />
+        android:padding="10dp"
+        android:rotation="180"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
 
     <Button
         android:id="@+id/main_play_button_player2"
@@ -30,6 +34,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
