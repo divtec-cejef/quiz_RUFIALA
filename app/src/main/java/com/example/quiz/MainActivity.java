@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
     private TextInputEditText Et_saisie_question;
     private RelativeLayout LAY_question;
     private RelativeLayout LAY_parametre;
+    private RelativeLayout LAY_favorite;
 
+    private Button BT_cancel_favorite;
     private Button BT_cancel_question;
     private Button BT_validate_question;
     private Button BT_cancel_parametre;
@@ -50,14 +52,17 @@ public class MainActivity extends AppCompatActivity {
         BT_play = findViewById(R.id.main_play_button);
         LAY_question = findViewById(R.id.main_relativeLayout);
         LAY_parametre = findViewById(R.id.main_relativeLayout_parametre);
+        LAY_favorite = findViewById(R.id.main_relativeLayout_favorite);
         BT_cancel_question = findViewById(R.id.main_cancel_question_button);
         BT_cancel_parametre = findViewById(R.id.main_cancel_parametre_button);
+        BT_cancel_favorite = findViewById(R.id.main_cancel_favorite_button);
 
         ET_saisie_question_layout.setVisibility(EditText.GONE);
         ET_saisie_player1_layout.setVisibility(EditText.GONE);
         ET_saisie_player2_layout.setVisibility(EditText.GONE);
         LAY_question.setVisibility(RelativeLayout.GONE);
         LAY_parametre.setVisibility(RelativeLayout.GONE);
+
         BT_play.setVisibility(Button.GONE);
     }
 

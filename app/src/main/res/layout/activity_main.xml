@@ -24,7 +24,7 @@
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
 
     </com.google.android.material.appbar.AppBarLayout>
-
+    <!--Layout de question -->
     <RelativeLayout
         android:id="@+id/main_relativeLayout"
         android:backgroundTint="@color/darkGrey"
@@ -42,8 +42,8 @@
             style="@style/Widget.Quiz.TextInputLayer.player1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="6dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="6dp"
             android:layout_marginBottom="20dp"
             android:hint="Player 1"
@@ -102,37 +102,117 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/main_relativeLayout_favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/appBarLayout">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:rowCount="1">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rufi Alan" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="V2.1" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="18.02.2022" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <Button
+                    android:id="@+id/main_cancel_favorite_button"
+                    style="@style/Widget.App.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:padding="12dp"
+                    android:text="Close" />
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+
+    <!--Layout de paramètre -->
+    <RelativeLayout
         android:id="@+id/main_relativeLayout_parametre"
         android:backgroundTint="@color/darkGrey"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_marginTop="130dp"
         android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp">
 
-        <!-- Discrete slider
         <com.google.android.material.slider.Slider
-        android:valueFrom="1.0"
-        android:valueTo="10.0"
-        android:stepSize="10.0"
-        android:layout_height="20dp"
-        android:layout_width="200dp"    />
--->
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="Slider en s"
+            android:value="5.0"
+            android:valueFrom="1.0"
+            android:valueTo="10.0"
+            android:stepSize="1"
+            app:trackColor="@color/darkButton"
+            app:thumbColor="@color/white"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"/>
+
             <TableLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="30dp"
                 android:columnCount="2"
                 android:orientation="horizontal"
-                android:rowCount="1">
+                android:rowCount="1"
+                android:gravity="center">
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="5dp">
+                    android:layout_marginTop="5dp"
+                    android:gravity="center">
 
                     <Button
                         android:id="@+id/main_validate_parametre_button"
