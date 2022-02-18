@@ -40,6 +40,7 @@
         android:id="@+id/game_score_p1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:rotation="180"
         android:text="Score : 0"
         android:textSize="20dp"
         android:layout_marginLeft="20dp"

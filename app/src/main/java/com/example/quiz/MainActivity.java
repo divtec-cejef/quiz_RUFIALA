@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private TextInputLayout ET_saisie_player2_layout;
     private TextInputLayout ET_saisie_question_layout;
     private TextInputEditText Et_saisie_question;
+    private TextInputEditText ET_saisie_player1;
+    private TextInputEditText ET_saisie_player2;
     private RelativeLayout LAY_question;
     private RelativeLayout LAY_parametre;
     private RelativeLayout LAY_favorite;
@@ -49,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         ET_saisie_player2_layout = findViewById(R.id.main_edit_text_player2_layout);
         ET_saisie_question_layout = findViewById(R.id.main_edit_text_question_layout);
         Et_saisie_question = findViewById(R.id.main_edit_text_question);
+        ET_saisie_player1 = findViewById(R.id.main_edit_text_player1);
+        ET_saisie_player2 = findViewById(R.id.main_edit_text_player2);
         BT_play = findViewById(R.id.main_play_button);
         LAY_question = findViewById(R.id.main_relativeLayout);
         LAY_parametre = findViewById(R.id.main_relativeLayout_parametre);
@@ -70,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
         BT_player.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,7 +95,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent game = new Intent(getApplicationContext(), GameActivity.class);
-                //game.putExtra();
+                game.putExtra("Player1", getPlayerName(true));
+                game.putExtra( "Player2", getPlayerName(false));
                 startActivity(game);
             }
         });
@@ -120,6 +126,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    private String getPlayerName(Boolean player1) {
+        String name = "";
+        if (player1) {
+            name = ET_saisie_player1.getText().toString();
+        } else {
+            name = ET_saisie_player2.getText().toString();
+        }
+        return name;
+    }
+
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
