@@ -39,6 +39,13 @@
         <item name="suffixText">Player 1</item>
         <item name="android:paddingBottom">8dp</item>
     </style>
+    <style name="Widget.Quiz.TextInputLayer.question" parent="">
+        <item name="boxStrokeColor">@color/darkButton</item>
+        <item name="hintTextColor">@color/darkTextStandar</item>
+        <item name="hintTextAppearance">@style/TextAppearance.Quiz.TextInputLayout.HintText</item>
+        <item name="suffixText">Question</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
 
     <!--Style pour les buttons-->
     <style name="Widget.App.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">

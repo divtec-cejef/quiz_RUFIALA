@@ -14,15 +14,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.quiz.Controllers.QuestionManager;
 import com.google.android.material.textfield.TextInputLayout;
 
 
 public class GameActivity extends AppCompatActivity {
     private String player1_name;
     private String player2_name;
+    private String question;
 
     private TextView TV_player1;
-    private  TextView TV_player2;
+    private TextView TV_player2;
+    private TextView TV_Question_P1;
+    private TextView TV_Question_P2;
+
+    private QuestionManager myQuestion = MainActivity.myQuestion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +43,15 @@ public class GameActivity extends AppCompatActivity {
         //Initialiser les textView
         TV_player1 = findViewById(R.id.game_name_p1);
         TV_player2 = findViewById(R.id.game_name_p2);
+        TV_Question_P1 = findViewById(R.id.game_question_p1);
+        TV_Question_P2 = findViewById(R.id.game_question_p2);
 
         //Définit le nom des joueurs
         TV_player1.setText(player1_name);
         TV_player2.setText(player2_name);
+
+        question = myQuestion.getQuestion();
+        TV_Question_P1.setText(question);
+        TV_Question_P2.setText(question);
     }
-
-
 }

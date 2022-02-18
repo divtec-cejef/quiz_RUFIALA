@@ -17,11 +17,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 
+import com.example.quiz.Controllers.QuestionManager;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static QuestionManager myQuestion = new QuestionManager();
     private Button BT_player;
     private Button BT_play;
     private TextInputLayout ET_saisie_player1_layout;
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar mainToolBar = findViewById(R.id.main_toolbar);
         setSupportActionBar(mainToolBar);
+        myQuestion.listeQuestion();
 
         BT_player = findViewById(R.id.main_player_button);
         ET_saisie_player1_layout = findViewById(R.id.main_edit_text_player1_layout);
