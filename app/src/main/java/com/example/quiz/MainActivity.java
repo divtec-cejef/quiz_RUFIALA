@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         ET_saisie_player2_layout.setVisibility(EditText.GONE);
         LAY_question.setVisibility(RelativeLayout.GONE);
         LAY_parametre.setVisibility(RelativeLayout.GONE);
+        LAY_favorite.setVisibility(RelativeLayout.GONE);
 
         BT_play.setVisibility(Button.GONE);
     }
@@ -111,8 +112,14 @@ public class MainActivity extends AppCompatActivity {
                 LAY_parametre.setVisibility(RelativeLayout.GONE);
             }
         });
-    }
 
+        BT_cancel_favorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LAY_favorite.setVisibility(View.GONE);
+            }
+        });
+    }
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
@@ -125,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.action_favorite:
                 //Do action
-
+                LAY_favorite.setVisibility(RelativeLayout.VISIBLE);
                 break;
             case R.id.action_parametre:
                // resetField();
