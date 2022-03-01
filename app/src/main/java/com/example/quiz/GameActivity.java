@@ -30,7 +30,7 @@ public class GameActivity extends AppCompatActivity {
     private TextView TV_Question_P2;
 
     Runnable questionRunnable=null;
-    private QuestionManager myQuestion = MainActivity.myQuestion;
+    private QuestionManager manager = MainActivity.manager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,26 +52,28 @@ public class GameActivity extends AppCompatActivity {
         TV_player1.setText(player1_name);
         TV_player2.setText(player2_name);
 
-        question = myQuestion.getQuestion();
+
+        question = manager.getQuestion();
+        //question = "Hi";
         TV_Question_P1.setText(question);
         TV_Question_P2.setText(question);
 
-        Handler test = new Handler();
-        questionRunnable = new Runnable() {
-            @Override
-            public void run() {
-                if(1 == 2){ //CONTROL_LAST_QUESTION
-
-                    handler.removeCallbacks(this);
+      //  Handler test = new Handler();
+        //questionRunnable = new Runnable() {
+          //  @Override
+            //public void run() {
+              //  if(1 == 2){ //CONTROL_LAST_QUESTION
+//
+  //                  test.removeCallbacks(this);
                     //DO_CODE_LAST_QUESTION
                     //...
                     //DO_OTHER_EXIT_CODE
-                }else{
+    //            }else{
                     //DO_CODE_QUESTION_ITERATION
-                    handler.postDelayed(this,"TIMER_MILLIS_QUESTION_DELAY");
-                }
-            }
-        };
+      //              test.postDelayed(this,"TIMER_MILLIS_QUESTION_DELAY");
+        //        }
+          //  }
+//        };
 
     }
 }
