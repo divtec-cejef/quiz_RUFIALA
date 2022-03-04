@@ -45,13 +45,14 @@ public class GameActivity extends AppCompatActivity {
     private Button BT_Vrai2;
 
     Runnable questionRunnable = null;
-    private QuestionManager manager = MainActivity.manager;
+    private QuestionManager manager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         Intent ret = getIntent();
+        manager = new QuestionManager(GameActivity.this);
 
 
         player1_name = ret.getStringExtra("Player1");

@@ -16,5 +16,4 @@ public class Question {
         return question;
     }
     public int getReponse(){return reponse;}
-    // Définit la question
 }

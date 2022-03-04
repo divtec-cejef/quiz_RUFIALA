@@ -15,17 +15,7 @@ import java.util.Random;
 
 
 public class QuestionManager {
-    ArrayList<Question> questionList;
-  //  ArrayList<String> question = new ArrayList<String>();
-    // Gère une liste question
-   // public void listeQuestion() {
-      //  question.add("Volvo est une marque Écossaise"); // Faux
-      //  question.add("BMW est une marque Allemande"); // Vrai
-      //  question.add("Ford est une marque Américaine"); // Vrai
-      //  question.add("Mazda est une marque Allemande"); // Faux
-      //  question.add("Mazerati à été fonder avant Porsche"); //Vrai
-      // question.add("Honda est une marque chinoise "); // Faux
-   // }
+    private ArrayList<Question> questionList;
 
     /**
      * Permet de récuperer une question aléatoirement

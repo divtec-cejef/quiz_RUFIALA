@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
         BT_play.setVisibility(Button.GONE);
 
-        manager = new QuestionManager(MainActivity.this);
+        //manager = new QuestionManager(MainActivity.this);
        // myQuestion = manager.getQuestion().getQuestion();
     }
 
