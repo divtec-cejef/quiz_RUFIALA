@@ -80,13 +80,13 @@ public class GameActivity extends AppCompatActivity {
         scoreP2= 0;
 
         // Désactive les bouttons
-        BT_Vrai1.setEnabled(false);
-        BT_Vrai2.setEnabled(false);
+        unableBT();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+        // Si le joueur 1 clic, change son score en fonction de sa réponse
         BT_Vrai1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,12 +95,13 @@ public class GameActivity extends AppCompatActivity {
                 } else {
                     scoreP1 -= 1;
                 }
-                BT_Vrai1.setEnabled(false);
-                BT_Vrai2.setEnabled(false);
+                unableBT();
                 String score = "Score : " + scoreP1.toString();
                 TV_Score1.setText(score);
             }
         });
+
+        // Si le joueur 2 clic, change son score en fonction de sa réponse
         BT_Vrai2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,17 +110,15 @@ public class GameActivity extends AppCompatActivity {
                 } else {
                     scoreP2 -= 1;
                 }
-                BT_Vrai2.setEnabled(false);
-                BT_Vrai1.setEnabled(false);
+                unableBT();
                 String score = "Score : " + scoreP2.toString();
                 TV_Score2.setText(score);
             }
         });
         game();
-
     }
 
-    //Réalie le jeux
+    //Réalise le jeux (moteur du jeux)
     private void game() {
         Handler handler = new Handler();
         questionRunnable = new Runnable() {
@@ -130,8 +129,7 @@ public class GameActivity extends AppCompatActivity {
                     resultat();
                     handler.removeCallbacks(this);
                 } else {
-                    BT_Vrai1.setEnabled(true);
-                    BT_Vrai2.setEnabled(true);
+                    activateBT();
                     myQuestion = manager.getQuestion();
                     question = myQuestion.getQuestion();
                     TV_Question_P1.setText(question);
@@ -154,6 +152,21 @@ public class GameActivity extends AppCompatActivity {
         } else if (scoreP2 > scoreP1) {
             TV_Question_P1.setText("Perdu !");
             TV_Question_P2.setText("Gagner !");
+        } else {
+            TV_Question_P1.setText("Egalité !");
+            TV_Question_P2.setText("Egalité !");
         }
+    }
+
+    // Désactive les boutons
+    private void unableBT() {
+        BT_Vrai2.setEnabled(false);
+        BT_Vrai1.setEnabled(false);
+    }
+
+    // Active les boutons
+    private void activateBT() {
+        BT_Vrai1.setEnabled(true);
+        BT_Vrai2.setEnabled(true);
     }
 }
