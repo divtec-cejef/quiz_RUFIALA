@@ -74,9 +74,6 @@ public class MainActivity extends AppCompatActivity {
         LAY_favorite.setVisibility(RelativeLayout.GONE);
 
         BT_play.setVisibility(Button.GONE);
-
-        //manager = new QuestionManager(MainActivity.this);
-       // myQuestion = manager.getQuestion().getQuestion();
     }
 
     @Override
@@ -86,6 +83,10 @@ public class MainActivity extends AppCompatActivity {
         BT_player.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ET_saisie_question_layout.setVisibility(EditText.GONE);
+                LAY_question.setVisibility(RelativeLayout.GONE);
+                LAY_parametre.setVisibility(RelativeLayout.GONE);
+                LAY_favorite.setVisibility(RelativeLayout.GONE);
                 if (ET_saisie_player1_layout.getVisibility() == View.GONE) {
                     ET_saisie_player1_layout.setVisibility(EditText.VISIBLE);
                     ET_saisie_player2_layout.setVisibility(EditText.VISIBLE);
@@ -102,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         BT_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                notVisibleAll();
                 Intent game = new Intent(getApplicationContext(), GameActivity.class);
                 game.putExtra("Player1", getPlayerName(true));
                 game.putExtra( "Player2", getPlayerName(false));
@@ -156,14 +158,15 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case R.id.action_favorite:
-                //Do action
+                notVisibleAll();
                 LAY_favorite.setVisibility(RelativeLayout.VISIBLE);
                 break;
             case R.id.action_parametre:
-               // resetField();
+                notVisibleAll();
                 LAY_parametre.setVisibility(RelativeLayout.VISIBLE);
                 break;
             case R.id.action_question:
+                notVisibleAll();
                 ET_saisie_question_layout.setVisibility(EditText.VISIBLE);
                 LAY_question.setVisibility(RelativeLayout.VISIBLE);
                 break;
@@ -171,6 +174,17 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
         return true;
+    }
+
+    private void notVisibleAll() {
+        ET_saisie_question_layout.setVisibility(EditText.GONE);
+        LAY_question.setVisibility(RelativeLayout.GONE);
+        LAY_parametre.setVisibility(RelativeLayout.GONE);
+        LAY_favorite.setVisibility(RelativeLayout.GONE);
+        ET_saisie_player1_layout.setVisibility(EditText.GONE);
+        ET_saisie_player2_layout.setVisibility(EditText.GONE);
+        BT_play.setVisibility(Button.GONE);
+        BT_play.setVisibility(Button.GONE);
     }
 
 }
