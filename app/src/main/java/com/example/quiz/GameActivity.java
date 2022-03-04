@@ -52,8 +52,8 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         Intent ret = getIntent();
+        //Crée un nouveau manager
         manager = new QuestionManager(GameActivity.this);
-
 
         player1_name = ret.getStringExtra("Player1");
         player2_name = ret.getStringExtra("Player2");
@@ -74,13 +74,14 @@ public class GameActivity extends AppCompatActivity {
         TV_player1.setText(player1_name);
         TV_player2.setText(player2_name);
 
+        //Initialise les variables de jeux
         nbrQuestion = 6;
         scoreP1 = 0;
         scoreP2= 0;
 
-
-
-
+        // Désactive les bouttons
+        BT_Vrai1.setEnabled(false);
+        BT_Vrai2.setEnabled(false);
     }
 
     @Override
@@ -95,6 +96,7 @@ public class GameActivity extends AppCompatActivity {
                     scoreP1 -= 1;
                 }
                 BT_Vrai1.setEnabled(false);
+                BT_Vrai2.setEnabled(false);
                 String score = "Score : " + scoreP1.toString();
                 TV_Score1.setText(score);
             }
@@ -108,6 +110,7 @@ public class GameActivity extends AppCompatActivity {
                     scoreP2 -= 1;
                 }
                 BT_Vrai2.setEnabled(false);
+                BT_Vrai1.setEnabled(false);
                 String score = "Score : " + scoreP2.toString();
                 TV_Score2.setText(score);
             }
@@ -115,6 +118,8 @@ public class GameActivity extends AppCompatActivity {
         game();
 
     }
+
+    //Réalie le jeux
     private void game() {
         Handler handler = new Handler();
         questionRunnable = new Runnable() {
@@ -122,13 +127,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if (manager.listSize() == 0) {
-                    if (scoreP1 > scoreP2) {
-                        TV_Question_P1.setText("Gagner !");
-                        TV_Question_P2.setText("Perdu !");
-                    } else if (scoreP2 > scoreP1) {
-                        TV_Question_P1.setText("Perdu !");
-                        TV_Question_P2.setText("Gagner !");
-                    }
+                    resultat();
                     handler.removeCallbacks(this);
                 } else {
                     BT_Vrai1.setEnabled(true);
@@ -145,5 +144,16 @@ public class GameActivity extends AppCompatActivity {
 
         };
         handler.postDelayed(questionRunnable, 3000);
+    }
+
+    // Affiche les résultats du jeux
+    private void resultat() {
+        if (scoreP1 > scoreP2) {
+            TV_Question_P1.setText("Gagner !");
+            TV_Question_P2.setText("Perdu !");
+        } else if (scoreP2 > scoreP1) {
+            TV_Question_P1.setText("Perdu !");
+            TV_Question_P2.setText("Gagner !");
+        }
     }
 }
