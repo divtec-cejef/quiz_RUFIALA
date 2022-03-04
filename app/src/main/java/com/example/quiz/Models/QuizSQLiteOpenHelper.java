@@ -17,11 +17,11 @@ public class QuizSQLiteOpenHelper extends SQLiteOpenHelper{
         String sqlCreateDatatableQuiz = "CREATE TABLE quiz(idQuiz INTEGER PRIMARY KEY,question TEXT,reponse INTEGER);";
         db.execSQL(sqlCreateDatatableQuiz);
         db.execSQL("INSERT INTO quiz VALUES(1,\"Volvo est une marque Écossaise\",0)");
-        db.execSQL("INSERT INTO quiz VALUES(2,\"BMW est une marque Allemande\",0)");
-        db.execSQL("INSERT INTO quiz VALUES(3,\"Ford est une marque Américaine\",0)");
-        db.execSQL("INSERT INTO quiz VALUES(4,\"Mazda est une marque Allemande\",1)");
+        db.execSQL("INSERT INTO quiz VALUES(2,\"BMW est une marque Allemande\",1)");
+        db.execSQL("INSERT INTO quiz VALUES(3,\"Ford est une marque Américaine\",1)");
+        db.execSQL("INSERT INTO quiz VALUES(4,\"Mazda est une marque Allemande\",0)");
         db.execSQL("INSERT INTO quiz VALUES(5,\"Mazerati à été fonder avant Porsche\",1)");
-        db.execSQL("INSERT INTO quiz VALUES(6,\"Honda est une marque chinoise\",1)");
+        db.execSQL("INSERT INTO quiz VALUES(6,\"Honda est une marque chinoise\",0)");
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {}

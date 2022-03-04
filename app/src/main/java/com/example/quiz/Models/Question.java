@@ -15,5 +15,6 @@ public class Question {
     public String getQuestion() {
         return question;
     }
+    public int getReponse(){return reponse;}
     // Définit la question
 }

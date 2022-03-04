@@ -9,7 +9,7 @@
     tools:context=".GameActivity">
 
     <Button
-        android:id="@+id/main_play_button_player1"
+        android:id="@+id/game_vrai_button_player1"
         style="ret.SpeedQuiz.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,8 +33,8 @@
         android:rotation="180"
         android:text="Player1"
         android:textSize="25dp"
-        app:layout_constraintStart_toStartOf="@+id/main_play_button_player1"
-        app:layout_constraintTop_toBottomOf="@+id/main_play_button_player1" />
+        app:layout_constraintStart_toStartOf="@+id/game_vrai_button_player1"
+        app:layout_constraintTop_toBottomOf="@+id/game_vrai_button_player1" />
 
     <TextView
         android:id="@+id/game_score_p1"
@@ -72,12 +72,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:rotation="180"
-                android:text="Question"
+                android:text="Préparer vous !!"
                 android:textSize="32dp"
-                app:layout_constraintBottom_toTopOf="@+id/main_play_button_player2"
+                app:layout_constraintBottom_toTopOf="@+id/game_vrai_button_player2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/main_play_button_player1" />
+                app:layout_constraintTop_toBottomOf="@+id/game_vrai_button_player1" />
         </TableRow>
 
         <TableRow
@@ -90,17 +90,17 @@
                 android:id="@+id/game_question_p2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Question"
+                android:text="Préparer vous !!"
                 android:textSize="32dp"
-                app:layout_constraintBottom_toTopOf="@+id/main_play_button_player2"
+                app:layout_constraintBottom_toTopOf="@+id/game_vrai_button_player1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/main_play_button_player1" />
+                app:layout_constraintTop_toBottomOf="@+id/game_vrai_button_player1" />
         </TableRow>
     </TableLayout>
 
     <Button
-        android:id="@+id/main_play_button_player2"
+        android:id="@+id/game_vrai_button_player2"
         style="ret.SpeedQuiz.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -122,8 +122,8 @@
         android:layout_marginBottom="20dp"
         android:text="Player2"
         android:textSize="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/main_play_button_player2"
-        app:layout_constraintEnd_toEndOf="@+id/main_play_button_player2" />
+        app:layout_constraintBottom_toTopOf="@+id/game_vrai_button_player2"
+        app:layout_constraintEnd_toEndOf="@+id/game_vrai_button_player2" />
 
     <TextView
         android:id="@+id/game_score_p2"

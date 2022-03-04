@@ -27,13 +27,33 @@ public class QuestionManager {
       // question.add("Honda est une marque chinoise "); // Faux
    // }
 
-    public String getQuestion() {
+    /**
+     * Permet de récuperer une question aléatoirement
+     * @return une question aléatoire
+     */
+    public Question getQuestion() {
 
         Random random = new Random();
         int pos = (int) (Math.random() * questionList.size());
-        String randomQuestion = questionList.get(pos).getQuestion();
-
+        Question randomQuestion = questionList.get(pos);
+        removeQuestion(pos);
         return randomQuestion;
+    }
+
+    /**
+     * Supprime la question utiliser
+     * @param questionPos indexe de la question a supprimer
+     */
+    private void removeQuestion(int questionPos) {
+        questionList.remove(questionPos);
+    }
+
+    /**
+     * Donne le nombre d'élement de la liste
+     * @return le nombre d'élement présent dans la liste
+     */
+    public int listSize() {
+        return questionList.size();
     }
 
     /**
