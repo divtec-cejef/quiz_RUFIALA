@@ -16,7 +16,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.quiz.Controllers.QuestionManager;
+import com.example.quiz.Models.Question;
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.concurrent.TimeUnit;
 
 
 public class GameActivity extends AppCompatActivity {
@@ -29,7 +32,7 @@ public class GameActivity extends AppCompatActivity {
     private TextView TV_Question_P1;
     private TextView TV_Question_P2;
 
-    Runnable questionRunnable=null;
+    Runnable questionRunnable = null;
     private QuestionManager manager = MainActivity.manager;
 
     @Override
@@ -54,26 +57,32 @@ public class GameActivity extends AppCompatActivity {
 
 
         question = manager.getQuestion();
-        //question = "Hi";
         TV_Question_P1.setText(question);
         TV_Question_P2.setText(question);
+        //question = "Hi";
+        game();
 
-      //  Handler test = new Handler();
-        //questionRunnable = new Runnable() {
-          //  @Override
-            //public void run() {
-              //  if(1 == 2){ //CONTROL_LAST_QUESTION
-//
-  //                  test.removeCallbacks(this);
-                    //DO_CODE_LAST_QUESTION
-                    //...
-                    //DO_OTHER_EXIT_CODE
-    //            }else{
-                    //DO_CODE_QUESTION_ITERATION
-      //              test.postDelayed(this,"TIMER_MILLIS_QUESTION_DELAY");
-        //        }
-          //  }
-//        };
 
+    }
+
+    private void game() {
+        Handler handler = new Handler();
+        questionRunnable = new Runnable() {
+            @Override
+            public void run() {
+                if (0 == 1) {
+
+                    handler.removeCallbacks(this);
+                } else {
+                    question = manager.getQuestion();
+                    TV_Question_P1.setText(question);
+                    TV_Question_P2.setText(question);
+
+
+                    handler.postDelayed(this, 1000);
+                }
+            }
+        };
+        handler.postDelayed(questionRunnable, 1000);
     }
 }

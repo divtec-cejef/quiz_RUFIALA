@@ -31,7 +31,8 @@ public class QuestionManager {
 
         Random random = new Random();
         int pos = (int) (Math.random() * questionList.size());
-        String randomQuestion = questionList.get(pos).toString();
+        String randomQuestion = questionList.get(pos).getQuestion();
+
         return randomQuestion;
     }
 

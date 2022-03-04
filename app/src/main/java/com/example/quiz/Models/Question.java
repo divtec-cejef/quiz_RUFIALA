@@ -11,5 +11,9 @@ public class Question {
         question = cursor.getString(cursor.getColumnIndexOrThrow("question"));
         reponse = cursor.getInt(cursor.getColumnIndexOrThrow("reponse"));
     }
+
+    public String getQuestion() {
+        return question;
+    }
     // Définit la question
 }
